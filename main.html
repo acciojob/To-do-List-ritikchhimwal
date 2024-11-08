@@ -8,5 +8,32 @@
 </head>
 <body>
     <!-- add your code here -->
+	<body>
+    <input id="newTodoInput" />
+    <button id="addTodoBtn">Add todo</button>
+    <!-- your javascript must add todos inside the following tag as <li> tags! -->
+    <ol id="todoList"></ol>
+	<script>
+		document.getElementById('addTodoBtn').addEventListener('click', function() {
+  const todoInput = document.getElementById('newTodoInput');
+  const todoText = todoInput.value.trim();
+
+  // Validate to ensure the input is not empty
+  if (todoText !== '') {
+    const todoList = document.getElementById('todoList');
+    const newTodo = document.createElement('li');
+    newTodo.textContent = todoText;
+
+    // Add the new item to the to-do list
+    todoList.appendChild(newTodo);
+
+    // Clear the input field
+    todoInput.value = '';
+  } else {
+    alert('Please enter a valid to-do item!');
+  }
+});
+
+	</script>
 </body>
 </html>
